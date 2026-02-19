@@ -1,16 +1,16 @@
 class Solution:
     def search(self, nums, target):
-        left = 0
-        right = len(nums) - 1
+        left = 0  # начало массива
+        right = len(nums) - 1  # конец массива
 
-        while left <= right:
-            mid = (left + right) // 2
+        while left <= right:  # пока есть место для поиска
+            mid = (left + right) // 2  # берём середину
 
             if nums[mid] == target:
-                return mid
+                return mid  # нашли число, возвращаем его индекс
             elif nums[mid] < target:
-                left = mid + 1
+                left = mid + 1  # число больше, ищем справа
             else:
-                right = mid - 1
+                right = mid - 1  # число меньше, ищем слева
 
-        return -1
+        return -1  # число не найдено
